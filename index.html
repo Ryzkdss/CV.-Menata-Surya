@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Jasa PLTS dan Powerstation terbaik dari CV Menata Surya. Solusi energi surya terpercaya untuk rumah & bisnis Anda. Teknisi profesional, garansi produk, konsultasi gratis.">
+    <meta name="keywords" content="PLTS, powerstation, energi surya, solar panel, CV Menata Surya">
+    <meta name="author" content="CV. MENATA SURYA">
+    <title>CV. MENATA SURYA | Solusi Energi Masa Depan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0A0E1A 0%, #0C1120 100%);
+            color: #E8EDF5;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E88E5;
+            border-radius: 10px;
+        }
+
+        .gradient-border {
+            background: linear-gradient(90deg, #1E88E5, #0D47A1, #1565C0);
+            height: 3px;
+            width: 80px;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        .gradient-divider {
+            background: linear-gradient(90deg, transparent, #1E88E5, #1565C0, #0D47A1, transparent);
+            height: 2px;
+            width: 100%;
+            margin: 3rem 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 12, 22, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(30, 136, 229, 0.3);
+        }
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            flex-wrap: wrap;
+        }
+        .logo-img {
+            background: linear-gradient(135deg, #0A2E5A, #0D3B6F);
+            border-radius: 12px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+        }
+        .logo-img span { color: #64B5F6; }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #E8EDF5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: #64B5F6; text-shadow: 0 0 6px #1E88E5; }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #64B5F6;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #1E88E5, #0D47A1);
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(30, 136, 229, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(30, 136, 229, 0.6);
+            background: linear-gradient(135deg, #42A5F5, #1565C0);
+        }
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .btn-wa:hover { background: #128C7E; transform: scale(1.02); }
+
+        /* Hero Slider */
+        .hero {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+        .hero-content { flex: 1; }
+        .hero-slider {
+            flex: 1;
+            position: relative;
+            height: 400px;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            object-fit: cover;
+        }
+        .slide.active { opacity: 1; }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFFFFF, #64B5F6, #1E88E5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .hero-buttons { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+
+        /* Sections */
+        section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* About */
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about-text { flex: 1; }
+        .about-highlights {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+        .highlight-card {
+            background: rgba(17, 25, 40, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: 1.2rem;
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+            border: 1px solid rgba(30, 136, 229, 0.3);
+            transition: 0.3s;
+        }
+        .highlight-card:hover { transform: translateY(-5px); border-color: #1E88E5; }
+        .highlight-card i { font-size: 2rem; color: #64B5F6; margin-bottom: 0.5rem; }
+
+        /* Product Cards with 3 images slider */
+        .products-container, .powerstation-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .product-card {
+            background: rgba(17, 25, 40, 0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            overflow: hidden;
+            width: 360px;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(30, 136, 229, 0.25);
+        }
+        .product-card:hover { transform: translateY(-12px); border-color: #1E88E5; box-shadow: 0 25px 40px -12px rgba(30, 136, 229, 0.3); }
+        
+        .card-slider {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+        .card-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        .card-slide.active { opacity: 1; }
+        .slider-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 5;
+        }
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .slider-dot.active { background: #1E88E5; transform: scale(1.2); }
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 5;
+            font-size: 14px;
+        }
+        .slider-arrow.prev { left: 8px; }
+        .slider-arrow.next { right: 8px; }
+        .slider-arrow:hover { background: #1E88E5; }
+
+        .product-info { padding: 1.5rem; }
+        .product-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; color: #64B5F6; }
+        .price { color: #F5A623; font-weight: 700; font-size: 1.3rem; margin: 0.8rem 0; }
+        .wa-product-btn { width: 100%; justify-content: center; }
+
+        /* Edukasi & Keunggulan */
+        .edu-grid, .keunggulan-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .edu-card, .keunggulan-card {
+            background: rgba(13, 19, 32, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 1.8rem;
+            border-radius: 24px;
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(30, 136, 229, 0.2);
+        }
+        .edu-card:hover, .keunggulan-card:hover { border-color: #1E88E5; transform: translateY(-5px); }
+        .keunggulan-card i, .edu-card i { font-size: 2.2rem; color: #64B5F6; margin-bottom: 1rem; }
+
+        /* Footer */
+        .footer {
+            background: #060B14;
+            padding: 3rem 2rem 1.5rem;
+            border-top: 1px solid rgba(30, 136, 229, 0.3);
+            text-align: center;
+        }
+        .float-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 999;
+            text-decoration: none;
+        }
+        .float-wa:hover { transform: scale(1.1); background: #128C7E; }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .hero-slider { height: 280px; }
+            .product-card { width: 100%; max-width: 340px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-img">
+            <i class="fas fa-solar-panel"></i> CV.<span>MENATA SURYA</span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section with Auto Slider -->
+<section id="home">
+    <div class="hero fade-up">
+        <div class="hero-content">
+            <h1>Solusi Energi Masa Depan Bersama CV. MENATA SURYA</h1>
+            <p style="font-size:1.2rem; color:#A0B4D7;">Solar Energy Solutions Terpercaya untuk Rumah & Bisnis Anda</p>
+            <div class="hero-buttons">
+                <a href="#produk" class="btn-primary">Lihat Produk</a>
+                <a href="https://wa.me/628993179090?text=Halo%20admin%2C%20saya%20tertarik%20dengan%20solusi%20energi%20surya%20CV.%20MENATA%20SURYA" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Hubungi Kami</a>
+            </div>
+        </div>
+        <div class="hero-slider" id="heroSlider">
+            <img class="slide active" src="https://cms.suryanesia.com/uploads/IMG_5970_edit_152a7934c3.jpg" alt="Solar Panel 1">
+            <img class="slide" src="https://solusikonstruksi.com/wp-content/uploads/2020/10/jenis-panel-surya-dalam-konstruksi-bangunan.jpg" alt="Solar Panel 2">
+            <img class="slide" src="https://unair.ac.id/wp-content/uploads/2022/09/Foto-by-Media-Indonesia.jpg" alt="Solar Panel 3">
+            <img class="slide" src="https://camarjaya.co.id/wp-content/uploads/2024/07/sistem-panel-surya.webp" alt="Solar Panel 4">
+        </div>
+    </div>
+</section>
+
+<!-- Tentang Kami -->
+<section id="tentang">
+    <div class="fade-up">
+        <h2 class="section-title">Tentang <span style="color:#64B5F6;">CV. MENATA SURYA</span></h2>
+        <div class="gradient-border"></div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p style="font-size:1.1rem; margin-bottom:1rem;">Kami fokus pada pengembangan <strong style="color:#64B5F6;">PLTS (Pembangkit Listrik Tenaga Surya)</strong> dan <strong style="color:#64B5F6;">Powerstation</strong> modern. Dengan komitmen menghadirkan energi bersih untuk Indonesia.</p>
+                <p style="margin-bottom:1rem;"><i class="fas fa-quote-left" style="color:#64B5F6;"></i> <strong>"Energi Bersih, Masa Depan Terang"</strong></p>
+                <p>Dukungan teknisi profesional, solusi hemat listrik, dan ramah lingkungan menjadi fondasi layanan kami.</p>
+            </div>
+            <div class="about-highlights">
+                <div class="highlight-card"><i class="fas fa-users"></i><h4>Teknisi Profesional</h4><small>Bersertifikat & berpengalaman</small></div>
+                <div class="highlight-card"><i class="fas fa-charging-station"></i><h4>Solusi Hemat Listrik</h4><small>Hingga 90% penghematan</small></div>
+                <div class="highlight-card"><i class="fas fa-leaf"></i><h4>Energi Ramah Lingkungan</h4><small>Zero emisi karbon</small></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gradient-divider"></div>
+
+<!-- PRODUK PLTS dengan 3 Gambar Slider -->
+<section id="produk">
+    <div class="fade-up">
+        <h2 class="section-title">⚡ <span style="color:#64B5F6;">PLTS</span> Pembangkit Listrik Tenaga Surya</h2>
+        <div class="products-container">
+            <div class="product-card" data-product="PLTS Paket Ekonomis">
+                <div class="card-slider" id="slider-plts">
+                    <img class="card-slide active" src="https://picsum.photos/id/41/400/250" alt="PLTS Image 1">
+                    <img class="card-slide" src="https://picsum.photos/id/58/400/250" alt="PLTS Image 2">
+                    <img class="card-slide" src="https://picsum.photos/id/77/400/250" alt="PLTS Image 3">
+                    <button class="slider-arrow prev" data-slider="plts">❮</button>
+                    <button class="slider-arrow next" data-slider="plts">❯</button>
+                    <div class="slider-controls" id="dots-plts"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">PLTS Paket Ekonomis</h3>
+                    <div class="price">Rp 15.000.000</div>
+                    <a href="https://wa.me/628993179090?text=Halo%20admin%2C%20saya%20ingin%20bertanya%20tentang%20produk%3A%20PLTS%20Paket%20Ekonomis" class="btn-wa wa-product-btn" target="_blank"><i class="fab fa-whatsapp"></i> Konsultasi Pemasangan Via WA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gradient-divider"></div>
+
+<!-- POWERSTATION (3 produk masing2 3 gambar) -->
+<section>
+    <div class="fade-up">
+        <h2 class="section-title">🔋 <span style="color:#64B5F6;">Powerstation</span> Penyimpanan Energi Portabel</h2>
+        <div class="powerstation-grid" id="powerstation-grid">
+            <!-- Product 1 -->
+            <div class="product-card" data-product="Powerstation 2000W">
+                <div class="card-slider" id="slider-ps1">
+                    <img class="card-slide active" src="https://picsum.photos/id/20/400/250" alt="PS1">
+                    <img class="card-slide" src="https://picsum.photos/id/26/400/250" alt="PS1-2">
+                    <img class="card-slide" src="https://picsum.photos/id/28/400/250" alt="PS1-3">
+                    <button class="slider-arrow prev" data-slider="ps1">❮</button>
+                    <button class="slider-arrow next" data-slider="ps1">❯</button>
+                    <div class="slider-controls" id="dots-ps1"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Powerstation 2000W - 1200Wh</h3>
+                    <div class="price">Rp 8.000.000</div>
+                    <a href="https://wa.me/628993179090?text=Halo%20admin%2C%20saya%20ingin%20bertanya%20tentang%20produk%3A%20Powerstation%202000W%20-%201200Wh" class="btn-wa wa-product-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card" data-product="Powerstation 4000W 1200Wh">
+                <div class="card-slider" id="slider-ps2">
+                    <img class="card-slide active" src="https://picsum.photos/id/47/400/250" alt="PS2">
+                    <img class="card-slide" src="https://picsum.photos/id/52/400/250" alt="PS2-2">
+                    <img class="card-slide" src="https://picsum.photos/id/55/400/250" alt="PS2-3">
+                    <button class="slider-arrow prev" data-slider="ps2">❮</button>
+                    <button class="slider-arrow next" data-slider="ps2">❯</button>
+                    <div class="slider-controls" id="dots-ps2"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Powerstation 4000W - 1200Wh</h3>
+                    <div class="price">Rp 12.000.000</div>
+                    <a href="https://wa.me/628993179090?text=Halo%20admin%2C%20saya%20ingin%20bertanya%20tentang%20produk%3A%20Powerstation%204000W%20-%201200Wh" class="btn-wa wa-product-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card" data-product="Powerstation 4000W 2400Wh">
+                <div class="card-slider" id="slider-ps3">
+                    <img class="card-slide active" src="https://picsum.photos/id/66/400/250" alt="PS3">
+                    <img class="card-slide" src="https://picsum.photos/id/68/400/250" alt="PS3-2">
+                    <img class="card-slide" src="https://picsum.photos/id/83/400/250" alt="PS3-3">
+                    <button class="slider-arrow prev" data-slider="ps3">❮</button>
+                    <button class="slider-arrow next" data-slider="ps3">❯</button>
+                    <div class="slider-controls" id="dots-ps3"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Powerstation 4000W - 2400Wh</h3>
+                    <div class="price">Rp 18.000.000</div>
+                    <a href="https://wa.me/628993179090?text=Halo%20admin%2C%20saya%20ingin%20bertanya%20tentang%20produk%3A%20Powerstation%204000W%20-%202400Wh" class="btn-wa wa-product-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUKASI -->
+<section>
+    <div class="fade-up">
+        <h2 class="section-title">🌱 <span style="color:#64B5F6;">Edukasi</span> Energi Surya</h2>
+        <div class="edu-grid">
+            <div class="edu-card"><i class="fas fa-solar-panel"></i><h3>Apa itu PLTS?</h3><p>Pembangkit Listrik Tenaga Surya mengubah sinar matahari menjadi listrik via panel surya, mengurangi tagihan dan emisi karbon.</p></div>
+            <div class="edu-card"><i class="fas fa-battery-full"></i><h3>Apa itu Powerstation?</h3><p>Baterai portable yang menyimpan energi dari panel surya atau listrik PLN, ideal saat darurat atau aktivitas outdoor.</p></div>
+            <div class="edu-card"><i class="fas fa-chart-line"></i><h3>Manfaat Energi Surya</h3><p>Hemat listrik, ramah lingkungan, investasi jangka panjang, kemandirian energi tanpa fluktuasi tarif.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section>
+    <div class="fade-up">
+        <h2 class="section-title">Kenapa Pilih <span style="color:#64B5F6;">CV. MENATA SURYA?</span></h2>
+        <div class="keunggulan-grid">
+            <div class="keunggulan-card"><i class="fas fa-hard-hat"></i><h4>Teknisi Berpengalaman</h4><small>30+ tahun di industri surya</small></div>
+            <div class="keunggulan-card"><i class="fas fa-award"></i><h4>Garansi Produk</h4><small>Pembelian 1 Bulan | Service 1 Tahun</small></div>
+            <div class="keunggulan-card"><i class="fas fa-tags"></i><h4>Harga Kompetitif</h4><small>Langsung dari sumber</small></div>
+            <div class="keunggulan-card"><i class="fas fa-headset"></i><h4>Konsultasi Gratis</h4><small>Tim ahli siap membantu</small></div>
+            <div class="keunggulan-card"><i class="fas fa-tools"></i><h4>Support After Sales</h4><small>Layanan purna jual responsif</small></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="kontak">
+    <div class="footer-content fade-up">
+        <div style="display:inline-flex; align-items:center; gap:8px; margin-bottom:1rem;">
+            <i class="fas fa-solar-panel" style="font-size:1.5rem; color:#64B5F6;"></i>
+            <span style="font-weight:700; font-size:1.3rem;">CV. MENATA SURYA</span>
+        </div>
+        <p><i class="fab fa-whatsapp" style="color:#25D366;"></i> +62 899-3179-090</p>
+        <p style="margin:1rem 0 0.5rem;">"Energi Bersih, Masa Depan Terang"</p>
+        <small>&copy; 2026 CV. MENATA SURYA - Solusi PLTS & Powerstation Profesional</small>
+    </div>
+</footer>
+
+<!-- Floating WA -->
+<a href="https://wa.me/628993179090?text=Halo%20admin%2C%20saya%20tertarik%20dengan%20produk%20CV.%20MENATA%20SURYA" class="float-wa" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    mobileBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+
+    // Hero Auto Slider
+    let heroIndex = 0;
+    const heroSlides = document.querySelectorAll('#heroSlider .slide');
+    function nextHeroSlide() {
+        heroSlides[heroIndex].classList.remove('active');
+        heroIndex = (heroIndex + 1) % heroSlides.length;
+        heroSlides[heroIndex].classList.add('active');
+    }
+    setInterval(nextHeroSlide, 4000);
+
+    // Universal Slider Factory for Product Cards
+    const slidersConfig = [
+        { id: 'plts', imagesCount: 3 },
+        { id: 'ps1', imagesCount: 3 },
+        { id: 'ps2', imagesCount: 3 },
+        { id: 'ps3', imagesCount: 3 }
+    ];
+
+    function initSlider(sliderId, totalImages) {
+        const container = document.getElementById(sliderId);
+        if(!container) return;
+        const slides = container.querySelectorAll('.card-slide');
+        const prevBtn = container.querySelector('.prev');
+        const nextBtn = container.querySelector('.next');
+        const dotsContainer = document.getElementById(`dots-${sliderId}`);
+        let current = 0;
+        
+        function updateSlides(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            if(dotsContainer) {
+                const dots = dotsContainer.querySelectorAll('.slider-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+        }
+        
+        function createDots() {
+            if(!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            for(let i=0; i<totalImages; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('slider-dot');
+                if(i === current) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    current = i;
+                    updateSlides(current);
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+        
+        if(prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                current = (current - 1 + totalImages) % totalImages;
+                updateSlides(current);
+            });
+        }
+        if(nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                current = (current + 1) % totalImages;
+                updateSlides(current);
+            });
+        }
+        createDots();
+    }
+    
+    slidersConfig.forEach(cfg => initSlider(cfg.id, cfg.imagesCount));
+
+    // Fade-in observer
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => observer.observe(el));
+    window.addEventListener('load', () => {
+        fadeElements.forEach(el => {
+            if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
+        });
+    });
+</script>
+</body>
+</html>
